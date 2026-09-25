@@ -23,7 +23,6 @@ public class PharmacyAdminCenterController {
     private final PharmacyRepository pharmacyRepository;
 
     @GetMapping("/center/profile")
-    @SuppressWarnings("null")
     public ResponseEntity<PharmacyProfileDto> getProfile() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();

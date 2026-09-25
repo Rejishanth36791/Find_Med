@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-@SuppressWarnings("null")
 public class AdminService {
 
     private final AdminRepository adminRepository;

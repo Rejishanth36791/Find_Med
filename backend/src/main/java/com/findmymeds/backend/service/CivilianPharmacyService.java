@@ -52,7 +52,6 @@ public class CivilianPharmacyService {
         return pharmacies;
     }
 
-    @SuppressWarnings("null")
     public Pharmacy savePharmacy(Pharmacy pharmacy) {
         return pharmacyRepository.save(pharmacy);
     }

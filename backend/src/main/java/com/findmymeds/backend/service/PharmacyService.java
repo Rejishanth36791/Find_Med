@@ -24,7 +24,6 @@ public class PharmacyService {
         return pharmacyRepository.findByNameContainingIgnoreCase(query);
     }
 
-    @SuppressWarnings("null")
     public Pharmacy savePharmacy(Pharmacy pharmacy) {
         return pharmacyRepository.save(pharmacy);
     }
