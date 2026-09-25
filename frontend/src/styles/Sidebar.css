@@ -4,12 +4,12 @@
     left: 0;
     width: var(--sidebar-width);
     height: 100vh;
-    background: var(--bg-sidebar);
+    background: #0F4C5C;
     display: flex;
     flex-direction: column;
     z-index: 1000;
     transition: transform var(--transition-normal);
-    border-right: 1px solid var(--color-gray-200);
+    border-right: 1px solid #167D8D;
     padding: 25px;
 }
 
@@ -32,16 +32,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #0F9D8A;
 }
 
 .sidebar-logo-text {
     font-size: 20px;
     font-weight: 700;
-    color: var(--color-gray-800);
+    color: #FFFFFF;
 }
 
 .sidebar-logo-text span {
-    color: var(--color-primary-dark);
+    color: #0F9D8A;
 }
 
 .sidebar-nav {
@@ -49,16 +50,16 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .sidebar-nav-link {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 14px 15px;
-    border-radius: var(--radius-lg);
-    color: var(--color-gray-500);
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #E8F6F7;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -66,13 +67,14 @@
 }
 
 .sidebar-nav-link:hover {
-    background: #EEFAF9;
-    color: var(--color-primary);
+    background: #167D8D;
+    color: #FFFFFF;
 }
 
 .sidebar-nav-link.active {
-    background: #EEFAF9;
-    color: var(--color-primary);
+    background: #0F9D8A;
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(15, 157, 138, 0.3);
 }
 
 .sidebar-nav-link.active::before {
@@ -80,8 +82,8 @@
 }
 
 .sidebar-nav-link svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     flex-shrink: 0;
     text-align: center;
 }
@@ -97,10 +99,10 @@
     align-items: center;
     gap: 15px;
     width: 100%;
-    padding: 14px 15px;
-    border-radius: var(--radius-lg);
+    padding: 12px 16px;
+    border-radius: 8px;
     background: transparent;
-    color: #EF4444;
+    color: #FECACA;
     border: none;
     font-size: 14px;
     font-weight: 600;
@@ -109,8 +111,8 @@
 }
 
 .sidebar-logout:hover {
-    background: #FEF2F2;
-    color: #DC2626;
+    background: rgba(220, 38, 38, 0.2);
+    color: #FFFFFF;
 }
 
 .sidebar-logout svg {

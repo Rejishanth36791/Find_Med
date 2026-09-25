@@ -1,36 +1,77 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap");
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #2FA4A9;
-    --color-primary-dark: #27888C;
+  --color-primary-blue: #0F4C5C;
+  --color-primary-light: #167D8D;
+  --color-pharmacy-teal: #0F9D8A;
+  --color-pharmacy-green: #38A169;
 
-    --color-sidebar-bg: var(--color-primary);
-    --color-sidebar-text: #ffffff;
-    --color-content-bg: #f9fafb;
+  --color-primary: #0F4C5C;
+  --color-primary-dark: #0A3641;
+  --color-teal: #0F9D8A;
+
+  --color-bg-light: #F4F9FA;
+  --color-card-light: #FFFFFF;
+  --color-text-main: #17324D;
+  --color-text-sub: #64748B;
+  --color-border-med: #D9E7EA;
+
+  --color-status-success: #16A34A;
+  --color-status-warning: #F59E0B;
+  --color-status-danger: #DC2626;
+  --color-status-info: #2563EB;
+  --color-status-special: #7C3AED;
+
+  --color-sidebar-bg: #0F4C5C;
+  --color-sidebar-active: #0F9D8A;
+  --color-sidebar-text: #E8F6F7;
+  --color-sidebar-hover: #167D8D;
+
+  --font-inter: 'Inter', sans-serif;
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --radius-input: 8px;
+  --radius-badge: 20px;
+  --radius-modal: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root:not(.light) {
-        --color-sidebar-bg: #ffffff;
-        --color-sidebar-text: var(--color-primary);
-        --color-content-bg: var(--color-primary);
-    }
+:root {
+  --bg-primary: #F4F9FA;
+  --bg-card: #FFFFFF;
+  --text-main: #17324D;
+  --text-sub: #64748B;
+  --border-color: #D9E7EA;
+
+  --sidebar-bg: #0F4C5C;
+  --sidebar-active: #0F9D8A;
+  --sidebar-text: #E8F6F7;
+  --sidebar-hover: #167D8D;
+
+  --color-primary: #0F4C5C;
+  --color-primary-light: #167D8D;
+  --color-teal: #0F9D8A;
 }
 
 .dark {
-    --color-sidebar-bg: #ffffff;
-    --color-sidebar-text: var(--color-primary);
-    --color-content-bg: var(--color-primary);
-}
+  --bg-primary: #0B1F26;
+  --bg-card: #102C34;
+  --text-main: #E8F6F7;
+  --text-sub: #94A3B8;
+  --border-color: #244650;
 
-.light {
-    --color-sidebar-bg: var(--color-primary);
-    --color-sidebar-text: #ffffff;
-    --color-content-bg: #f9fafb;
+  --sidebar-bg: #07151B;
+  --sidebar-active: #19B89F;
+  --sidebar-text: #E8F6F7;
+  --sidebar-hover: #167D8D;
+
+  --color-primary: #167D8D;
+  --color-teal: #19B89F;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--color-content-bg);
-}
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  margin: 0;
+}
