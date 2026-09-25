@@ -1,0 +1,104 @@
+.landing-page {
+    background-color: #fcfdfe; /* Subtle off-white */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+/* Navbar Alignment */
+.home-nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #0f172a;
+}
+
+.logo-icon {
+    background: #2FA4A9;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+/* Hero Section Styling */
+.home-hero {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 80px;
+}
+
+.home-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #e0f2f1;
+    color: #2FA4A9;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.home-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #2FA4A9, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* The Layout Fix: Cards Grid */
+.home-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 60px;
+}
+
+.home-card {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s ease;
+}
+
+.home-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.civilian-icon { background: #eff6ff; color: #3b82f6; }
+.pharmacy-icon { background: #ecfdf5; color: #10b981; }
+.admin-icon { background: #f5f3ff; color: #8b5cf6; }

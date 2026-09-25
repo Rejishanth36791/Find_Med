@@ -1,0 +1,1829 @@
+{
+    "info": {
+        "_postman_id": "admin-collection-id-123456",
+        "name": "FindMyMeds Admin API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Admin Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/admin/auth/login",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "admin",
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Appeals",
+            "item": [
+                {
+                    "name": "Get All Appeals",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/appeals?status=PENDING&page=0&size=10",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "appeals"
+                            ],
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "PENDING"
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Latest Appeal By Civilian",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/appeals/latest-by-civilian?civilianId=1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "appeals",
+                                "latest-by-civilian"
+                            ],
+                            "query": [
+                                {
+                                    "key": "civilianId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Appeal Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/appeals/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "appeals",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Approve Appeal",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/appeals/1/approve?adminId=1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "appeals",
+                                "1",
+                                "approve"
+                            ],
+                            "query": [
+                                {
+                                    "key": "adminId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Reject Appeal",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"reason\": \"Insufficient evidence provided.\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/appeals/1/reject?adminId=1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "appeals",
+                                "1",
+                                "reject"
+                            ],
+                            "query": [
+                                {
+                                    "key": "adminId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Civilians",
+            "item": [
+                {
+                    "name": "Get Metrics",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilians/metrics",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilians",
+                                "metrics"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "List Civilians",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilians?page=0&size=10",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilians"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Civilian Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilians/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilians",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Temp Ban Civilian",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"reason\": \"Violation of terms (Temp).\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilians/1/temp-ban?adminId=1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilians",
+                                "1",
+                                "temp-ban"
+                            ],
+                            "query": [
+                                {
+                                    "key": "adminId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Permanent Ban Civilian",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"reason\": \"Serious violation (Perm).\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilians/1/permanent-ban?adminId=1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilians",
+                                "1",
+                                "permanent-ban"
+                            ],
+                            "query": [
+                                {
+                                    "key": "adminId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Civilian Vivo",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilians/1/vivo",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilians",
+                                "1",
+                                "vivo"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Disable Login Civilian",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilians/1/vivo/disable-login?adminId=1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilians",
+                                "1",
+                                "vivo",
+                                "disable-login"
+                            ],
+                            "query": [
+                                {
+                                    "key": "adminId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Anonymize Civilian",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilians/1/vivo/anonymize?adminId=1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilians",
+                                "1",
+                                "vivo",
+                                "anonymize"
+                            ],
+                            "query": [
+                                {
+                                    "key": "adminId",
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Civilian Reports",
+            "item": [
+                {
+                    "name": "Get Metrics",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilian-reports/metrics",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilian-reports",
+                                "metrics"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "List Reports",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilian-reports?page=0&size=10",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilian-reports"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Report Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilian-reports/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilian-reports",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Mark In Progress",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilian-reports/1/in-progress",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilian-reports",
+                                "1",
+                                "in-progress"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Resolve Report",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilian-reports/1/resolve",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilian-reports",
+                                "1",
+                                "resolve"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Reject Report",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilian-reports/1/reject",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilian-reports",
+                                "1",
+                                "reject"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Respond to Report",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"message\": \"Issue acknowledged.\",\n    \"attachmentPath\": \"http://bucket/file.pdf\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/civilian-reports/1/respond",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "civilian-reports",
+                                "1",
+                                "respond"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Admin Management",
+            "item": [
+                {
+                    "name": "List Admins",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admins",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admins"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Admin By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admins/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admins",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Metrics",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admins/metrics",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admins",
+                                "metrics"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Admin",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"New Admin\",\n    \"email\": \"new_admin@example.com\",\n    \"password\": \"password123\",\n    \"role\": \"ADMIN\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admins",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admins"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Email",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"newEmail\": \"updated_admin@example.com\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admins/1/email",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admins",
+                                "1",
+                                "email"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Status",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admins/1/status?status=ACTIVE",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admins",
+                                "1",
+                                "status"
+                            ],
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "ACTIVE"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Admin",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admins/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admins",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get My Profile",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admins/me",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admins",
+                                "me"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Dashboard",
+            "item": [
+                {
+                    "name": "Get Stats",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/stats",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "stats"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Alerts",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/alerts",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "alerts"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Recent Notifications",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/notifications/recent",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "notifications",
+                                "recent"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Civilian Chart",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/charts/civilians",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "charts",
+                                "civilians"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Pharmacy Chart",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/charts/pharmacies",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "charts",
+                                "pharmacies"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Admin Chart",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/charts/admins",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "charts",
+                                "admins"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Reservation Chart",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/charts/reservations?days=30",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "charts",
+                                "reservations"
+                            ],
+                            "query": [
+                                {
+                                    "key": "days",
+                                    "value": "30"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Super Admin Overview",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/overview/super",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "overview",
+                                "super"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Admin Overview",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/overview/admin",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "overview",
+                                "admin"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Notification Metrics",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/dashboard/notifications/metrics",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "dashboard",
+                                "notifications",
+                                "metrics"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Medicines",
+            "item": [
+                {
+                    "name": "Get Medicines",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/medicines",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "medicines"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Metrics",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/medicines/metrics",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "medicines",
+                                "metrics"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Notifications",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/medicines/notifications",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "medicines",
+                                "notifications"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Medicine By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/medicines/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "medicines",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Medicine",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Paracetamol\",\n    \"genericName\": \"Acetaminophen\",\n    \"brandName\": \"Panadol\",\n    \"category\": \"Analgesic\",\n    \"manufacturer\": \"GSK\",\n    \"dosageForm\": \"Tablet\",\n    \"strength\": \"500mg\",\n    \"price\": 10.00,\n    \"prescriptionRequired\": false\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/medicines",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "medicines"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Medicine",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Paracetamol Updated\",\n    \"price\": 12.00\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/medicines/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "medicines",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Status",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/medicines/1/status?status=AVAILABLE",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "medicines",
+                                "1",
+                                "status"
+                            ],
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "AVAILABLE"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Medicine",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/medicines/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "medicines",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Pharmacies",
+            "item": [
+                {
+                    "name": "Get All Pharmacies",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Pharmacy By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Rejected Pharmacy By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies/rejected/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies",
+                                "rejected",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Pharmacy",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"New Pharmacy\",\n    \"address\": \"123 Health St\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Pharmacy",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Updated Pharmacy\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Suspend Pharmacy",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies/1/suspend",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies",
+                                "1",
+                                "suspend"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Activate Pharmacy",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies/1/activate",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies",
+                                "1",
+                                "activate"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Approve Pharmacy",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies/1/approve",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies",
+                                "1",
+                                "approve"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove Pharmacy",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies/1/remove",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies",
+                                "1",
+                                "remove"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Reject Pharmacy",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"reason\": \"Documentation missing\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/pharmacies/1/reject",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "pharmacies",
+                                "1",
+                                "reject"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Inventory By Pharmacy",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-inventories/pharmacy/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-inventories",
+                                "pharmacy",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add Inventory",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-inventories",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-inventories"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Inventory",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-inventories",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-inventories"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Profile By Pharmacy",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-profiles/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-profiles",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Save Profile",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-profiles",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-profiles"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Reports By Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-reports/status/OPEN",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-reports",
+                                "status",
+                                "OPEN"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Reports By Pharmacy",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-reports/pharmacy/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-reports",
+                                "pharmacy",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Report",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-reports",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-reports"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Report Status",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/admin/pharmacy-reports/1/status?status=CLOSED",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "admin",
+                                "pharmacy-reports",
+                                "1",
+                                "status"
+                            ],
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "CLOSED"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Notifications",
+            "item": [
+                {
+                    "name": "Get Admin Notifications",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin/notifications",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "notifications"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Profile",
+            "item": [
+                {
+                    "name": "Get Profile",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/profile",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "profile"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Admin Reports",
+            "item": [
+                {
+                    "name": "Get All Reports",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin-reports",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin-reports"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Reports By Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin-reports/status/OPEN",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin-reports",
+                                "status",
+                                "OPEN"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get My Reports",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin-reports/my-reports",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin-reports",
+                                "my-reports"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Report By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin-reports/1",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin-reports",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Metrics",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin-reports/metrics",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin-reports",
+                                "metrics"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Report",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"System Issue\",\n    \"description\": \"Server slow\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin-reports",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin-reports"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Report Status",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"status\": \"RESOLVED\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/admin-reports/1/status",
+                            "host": [
+                                "http://localhost:8080"
+                            ],
+                            "path": [
+                                "api",
+                                "admin-reports",
+                                "1",
+                                "status"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8080",
+            "type": "string"
+        }
+    ]
+}
