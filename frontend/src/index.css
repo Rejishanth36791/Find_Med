@@ -74,4 +74,17 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-main);
   margin: 0;
-}
+}
+
+/* Form Input Typing Font Color */
+input,
+select,
+textarea {
+  color: #000000 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748B !important;
+}
+

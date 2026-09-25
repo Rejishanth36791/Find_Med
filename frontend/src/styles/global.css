@@ -255,6 +255,12 @@ textarea {
   font-family: inherit;
   transition: all var(--transition-fast);
   background: var(--color-white);
+  color: #000000 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748B !important;
 }
 
 input:focus,
